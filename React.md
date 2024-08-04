@@ -1,6 +1,6 @@
 ## React props basic
 
-Passing props from the parents (App to Nav)
+Passing props to a component from the parents, for instance, The topics props passed from App to Nav
 
 ```javascript
 import './App.css'
@@ -37,4 +37,15 @@ function App() {
  
 
 export default App
+```
+
+You can omit `props` and replace it by directly destructuring the `topics` property from the parameter.
+```
+export function Nav(props) { // Destructuring props to Nav({ topics })
+  const list = []
+  for (let i = 0; i < props.topics.length; i++) { // you can ommit props
+    let t = props.topics[i]
+    list.push(<li key={t.id}>{t.title}</li>)
+  }
+
 ```
