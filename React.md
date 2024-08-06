@@ -39,6 +39,7 @@ function App() {
 export default App
 ```
 
+## Destructuring
 You can omit `props` and replace it by directly destructuring the `topics` property from the parameter.
 ```javascript
 export function Nav(props) { // Destructuring props to Nav({ topics })
@@ -47,6 +48,16 @@ export function Nav(props) { // Destructuring props to Nav({ topics })
     let t = props.topics[i]
     list.push(<li key={t.id}>{t.title}</li>)
   }
+
+...
+
+export function Nav({topics}) { // props destructuring
+  console.log(topics)
+  const list = []
+  for (let i = 0; i < topics.length; i++) {
+    let t = topics[i]
+    list.push(<li key={t.id}>{t.title}</li>)
+}
 
 ```
 
